@@ -9,5 +9,5 @@ class ScrApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
+

@@ -15,13 +15,13 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @PostMapping("/encrypt")
-    public String encryptPassword(@RequestBody String password) {
-        return authService.encryptPassword(password);
+    @PostMapping("/login")
+    public String login(@RequestParam String nome, @RequestParam String senha, @RequestParam String email) throws UnknownHostException {
+        return authService.login(nome, senha, email);
     }
 
-    @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, @RequestParam String email) throws UnknownHostException {
-        return authService.login(username, password, email);
+    @PostMapping("/registrar")
+    public String registrar(@RequestParam String nome, @RequestParam String senha) {
+        return authService.registerUser(nome, senha);
     }
 }

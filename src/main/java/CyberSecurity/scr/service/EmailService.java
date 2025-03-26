@@ -7,8 +7,8 @@ import java.util.Properties;
 
 public class EmailService {
 
-    private static final String senderEmail = "seu-email@gmail.com";
-    private static final String senderPassword = "sua-senha";
+    private static final String senderEmail = System.getenv("EMAIL_USER");
+    private static final String senderPassword = System.getenv("EMAIL_PASSWORD");
 
     public static void sendAlert(String recipient, String ip) {
         String subject = "Alerta de Tentativas de Login Suspeitas!";
